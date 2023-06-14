@@ -1,13 +1,11 @@
 <template>
   <div class="container">
     <div class="card">
-      <h4 class="card-header">
-        <i class="bi bi-truck"></i> Melhor Frete
-      </h4>
+      <h4 class="card-header"><i class="bi bi-truck"></i> Melhor Frete</h4>
       <div class="card-body">
-        <div class="fretes row">
-          <div class="consulta col"><ConsultaFrete/></div>
-          <div class="respostas col"><MelhoresTransportadoras/></div>
+        <div class="fretes">
+          <div class="consulta"><ConsultaFrete /></div>
+          <div class="transportadoras"><MelhoresTransportadoras /></div>
         </div>
       </div>
     </div>
@@ -16,9 +14,9 @@
 
 <script>
 import { getShippingQuoteFromApi } from "@/services/FreightQuote/getShippingQuoteFromApi";
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import ConsultaFrete from '../../components/ConsultaFrete.vue'
-import MelhoresTransportadoras from '../../components/MelhoresTransportadoras.vue'
+import "bootstrap-icons/font/bootstrap-icons.css";
+import ConsultaFrete from "../../components/ConsultaFrete.vue";
+import MelhoresTransportadoras from "../../components/MelhoresTransportadoras.vue";
 export default {
   components: {
     ConsultaFrete,
@@ -44,23 +42,51 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 30px;
+  margin-top: 20px;
+  padding: 0 30px;
+  min-height: 60vh;
 }
 
+.card {
+  border-radius: 15px;
+}
 
 .card-header {
-  background-color: #5ec5c1;  
+  background-color: #9fbac8;
   padding-left: 30px;
   width: 100%;
   margin: 0;
   color: #403c3c;
 }
 
-.title img {
-  width: 20px;
-  margin-right: 10px;
+.fretes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 30px;
 }
-.title b {
-  color: #403c3c;
+.consulta {
+  width: 65%;
+  margin: 0;
+  margin: 0;
 }
+
+.transportadoras {
+  width: 100%;
+  margin: 0;
+}
+@media (max-width: 1068px) {
+  .consulta {
+    width: 80%;
+    margin: 0;
+  }
+  .fretes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+  }
+}
+
 </style>
