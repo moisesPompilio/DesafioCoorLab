@@ -67,6 +67,13 @@ export default {
 };
 </script>
 <style scoped>
+.btn-primary{
+  background-color:  #9fbac8;
+  color: #292828;
+  padding: 5px 50px;
+  border: none;
+  margin-top: 30px;
+}
 .card {
   display: flex;
   justify-content: center;
@@ -83,4 +90,5 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 </style>

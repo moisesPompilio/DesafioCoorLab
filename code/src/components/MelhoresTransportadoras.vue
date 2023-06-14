@@ -85,6 +85,12 @@ export default {
 </script>
 
 <style scoped>
+.btn-primary{
+  background-color:  #9fbac8;
+  color: #292828;
+  padding: 5px 50px;
+  border: none;
+}
 .container {
   margin: 0;
   padding: 0;
@@ -165,8 +171,8 @@ i {
 
 #limpar {
   position: absolute;
-  bottom: 10px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
 }
 
 @media (max-width: 1024px) {
@@ -183,14 +189,9 @@ i {
 
 @media (max-width: 768px) {
 
-  .card {
-    padding: 20px;
-    background-color: #e2dcdc;
-    border-radius: 10px;
-  }
-
   .cards-transportadoras {
     padding: auto;
+    justify-content: center;
   }
 
   .trasportadora-detail {

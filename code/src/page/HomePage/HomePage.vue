@@ -41,6 +41,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .container {
   margin-top: 20px;
   padding: 0 30px;
@@ -78,6 +80,20 @@ export default {
 @media (max-width: 1068px) {
   .consulta {
     width: 80%;
+    margin: 0;
+  }
+  .fretes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 1068px) {
+  .consulta {
+    width: 100%;
     margin: 0;
   }
   .fretes {
