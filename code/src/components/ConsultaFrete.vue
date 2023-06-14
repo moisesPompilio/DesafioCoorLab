@@ -44,6 +44,7 @@
 
 <script>
 import { BuscarFretes } from "@/services/FreightQuote/BuscarFretes";
+import { LimparFretes } from "@/services/FreightQuote/LimparFretes";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default {
@@ -59,6 +60,7 @@ export default {
   },
   methods: {
     buscarFrete() {
+      LimparFretes()
       BuscarFretes(this.cidade, this.peso);
     },
   },
@@ -66,10 +68,19 @@ export default {
 </script>
 <style scoped>
 .card {
+  display: flex;
+  justify-content: center;
   background-color: #e2dcdc;
   padding: 80px 20px;
+  align-self: stretch;
+  min-height: 72vh;
 }
 .negrito {
   font-weight: bold;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
