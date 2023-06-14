@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <form @submit.prevent="buscarFrete()">
+    <form @submit.prevent="searchForFreightQuotes()">
       <fieldset>
         <legend class="negrito">
           <i class="bi bi-map"></i> Insira o destino e o peso
@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import { BuscarFretes } from "@/services/FreightQuote/BuscarFretes";
-import { LimparFretes } from "@/services/FreightQuote/LimparFretes";
+import { SearchForFreightQuotes } from "@/services/FreightQuote/SearchForFreightQuotes";
+import { ClearFreightQuotes } from "@/services/FreightQuote/ClearFreightQuotes";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default {
@@ -59,9 +59,9 @@ export default {
     };
   },
   methods: {
-    buscarFrete() {
-      LimparFretes()
-      BuscarFretes(this.cidade, this.peso);
+    searchForFreightQuotes() {
+      ClearFreightQuotes()
+      SearchForFreightQuotes(this.cidade, this.peso);
     },
   },
 };

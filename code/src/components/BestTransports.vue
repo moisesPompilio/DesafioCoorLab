@@ -17,16 +17,16 @@ Estas são as melhores alternativas de frete que encontramos para você.</pre
           <div class="trasportadora-details">
             <div class="negrito">Frete com menor valor</div>
             <div>
-              Transportadora: {{ $store.state.FreightQuotesValue.name }}
+              Transportadora: {{ $store.state.FreightQuotesSmallValue.name }}
             </div>
             <div>
-              Tempo estimado: {{ $store.state.FreightQuotesValue.lead_time }}
+              Tempo estimado: {{ $store.state.FreightQuotesSmallValue.lead_time }}
             </div>
           </div>
         </div>
         <div class="preço card-frete">
           <div class="negrito">Preço:</div>
-          <div>{{ $store.state.FreightQuotesValue.value }}</div>
+          <div>{{ $store.state.FreightQuotesSmallValue.value }}</div>
         </div>
       </div>
       <div class="cards-transportadoras">
@@ -53,7 +53,7 @@ Estas são as melhores alternativas de frete que encontramos para você.</pre
     <button
       v-if="$store.state.FreightQuotesSpeed.value"
       class="btn btn-primary"
-      @click="limpaDados()"
+      @click="clearFreightQuotes()"
       id="limpar"
     >
       Limpar
@@ -63,7 +63,7 @@ Estas são as melhores alternativas de frete que encontramos para você.</pre
 
 <script>
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { LimparFretes } from "@/services/FreightQuote/LimparFretes";
+import { ClearFreightQuotes } from "@/services/FreightQuote/ClearFreightQuotes";
 
 export default {
   data() {
@@ -71,14 +71,9 @@ export default {
       hasFreightQuotesSelected: false,
     };
   },
-  computed: {
-    hasFreightQuotesSpeed() {
-      return this.$store.state.FreightQuotesSpeed.value !== undefined;
-    },
-  },
   methods: {
-    limpaDados() {
-      LimparFretes();
+    clearFreightQuotes() {
+      ClearFreightQuotes();
     },
   },
 };

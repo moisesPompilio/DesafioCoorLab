@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <BestTransport/>
+    <NavBar/>
     <HomePage/>
   </div>
 </template>
 
 <script>
-import BestTransport from './components/BestTransport.vue'
+import NavBar from './components/NavBar.vue'
 import HomePage from './page/HomePage/HomePage.vue';
 
 export default {
   name: 'App',
   components: {
-    BestTransport,
+    NavBar,
     HomePage
   }
 }

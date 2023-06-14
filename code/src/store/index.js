@@ -8,8 +8,8 @@ export default new Vuex.Store({
     // cidades: { data: [], loading: false },
     // FreightQuotes: { data: [], loading: false },
     Cities: [],
-    FreightQuotes: [],
-    FreightQuotesValue: {},
+    Transports: [],
+    FreightQuotesSmallValue: {},
     FreightQuotesSpeed: {},
   },
   getters: {
@@ -18,11 +18,11 @@ export default new Vuex.Store({
     setCities(state, data) {
       state.Cities = data;
     },
-    setFreightQuotes(state, data) {
-      state.FreightQuotes = data;
+    setTransports(state, data) {
+      state.Transports = data;
     },
-    setFreightQuotesValue(state, data) {
-      state.FreightQuotesValue = data;
+    setFreightQuotesSmallValue(state, data) {
+      state.FreightQuotesSmallValue = data;
     },
     setFreightQuotesSpeed(state, data) {
       state.FreightQuotesSpeed = data;

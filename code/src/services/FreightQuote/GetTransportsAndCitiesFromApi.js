@@ -1,10 +1,10 @@
 import { getFreightQuotesApi } from "@/api/FreightQuotes/getFreightQuotesApi";
 import store from "@/store";
 
-export const getShippingQuoteFromApi = async () => {
-    const freightQuotes = await getFreightQuotesApi();
-    store.commit('setFreightQuotes', freightQuotes)
-    store.commit('setCities', getCitiesWithoutDuplicates(freightQuotes))
+export const GetTransportsAndCitiesFromApi = async () => {
+    const transports = await getFreightQuotesApi();
+    store.commit('setTransports', transports)
+    store.commit('setCities', getCitiesWithoutDuplicates(transports))
 }
 
 function getCitiesWithoutDuplicates(arr) {

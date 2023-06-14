@@ -4,8 +4,8 @@
       <h4 class="card-header"><i class="bi bi-truck"></i> Melhor Frete</h4>
       <div class="card-body">
         <div class="fretes">
-          <div class="consulta"><ConsultaFrete /></div>
-          <div class="transportadoras"><MelhoresTransportadoras /></div>
+          <div class="consulta"><ConsultFreightQuote /></div>
+          <div class="transportadoras"><BestTransports /></div>
         </div>
       </div>
     </div>
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import { getShippingQuoteFromApi } from "@/services/FreightQuote/getShippingQuoteFromApi";
+import { GetTransportsAndCitiesFromApi } from "@/services/FreightQuote/GetTransportsAndCitiesFromApi";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ConsultaFrete from "../../components/ConsultaFrete.vue";
-import MelhoresTransportadoras from "../../components/MelhoresTransportadoras.vue";
+import ConsultFreightQuote from "../../components/ConsultFreightQuote.vue";
+import BestTransports from "../../components/BestTransports.vue";
 export default {
   components: {
-    ConsultaFrete,
-    MelhoresTransportadoras,
+    ConsultFreightQuote,
+    BestTransports,
   },
   data() {
     const appName = "";
@@ -30,7 +30,7 @@ export default {
     };
   },
   async created() {
-    await getShippingQuoteFromApi();
+    await GetTransportsAndCitiesFromApi();
   },
   methods: {
     methodFoo() {

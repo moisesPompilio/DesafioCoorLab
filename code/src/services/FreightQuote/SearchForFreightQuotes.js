@@ -1,7 +1,7 @@
 import store from "@/store";
 
-export const BuscarFretes = (cidade, peso) => {
-  const freightQuotes = store.state.FreightQuotes;
+export const SearchForFreightQuotes = (cidade, peso) => {
+  const freightQuotes = store.state.Transports;
   const freightQuotesCidade = freightQuotes.filter(
     (freightQuote) => freightQuote.city == cidade
   );
@@ -13,7 +13,7 @@ export const BuscarFretes = (cidade, peso) => {
   const tipoCusto = peso > 100 ? "cost_transport_heavy" : "cost_transport_light";
 
   const freightQuotesSmallValue = encontrarMenorValor(freightQuotesCidade, tipoCusto);
-  store.commit("setFreightQuotesValue", montarFreightQuote(peso, freightQuotesSmallValue));
+  store.commit("setFreightQuotesSmallValue", montarFreightQuote(peso, freightQuotesSmallValue));
 
   const freightQuotesSpeed = encontrarMenorValor(freightQuotesCidade, "lead_time");
   store.commit("setFreightQuotesSpeed", montarFreightQuote(peso, freightQuotesSpeed));
