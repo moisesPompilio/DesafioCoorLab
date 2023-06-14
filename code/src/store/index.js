@@ -5,8 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    // cidades: { data: [], loading: false },
-    // FreightQuotes: { data: [], loading: false },
     Cities: [],
     Transports: [],
     FreightQuotesSmallValue: {},
