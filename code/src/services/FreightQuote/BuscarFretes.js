@@ -5,7 +5,6 @@ export const BuscarFretes = (cidade, peso) => {
   const freightQuotesCidade = freightQuotes.filter(
     (freightQuote) => freightQuote.city == cidade
   );
-  console.log(freightQuotesCidade);
 
   if (freightQuotes.length < 1) {
     throw new Error("Infelizmente não temos transportadora para essa cidade");
@@ -31,7 +30,7 @@ const encontrarMenorValor = (objetos, propriedade) => {
 const montarFreightQuote = (peso, frete) => {
   const stringValueFrete = frete[peso > 100 ? "cost_transport_heavy" : "cost_transport_light"];
   const valueFrete = converterParaNumero(stringValueFrete);
-  frete.value = `R$ ${(valueFrete * peso).toFixed(2).replace(".", ",")}`;
+  frete.value = `R$${(valueFrete * peso).toFixed(2).replace(".", ",")}`;
   return frete;
 };
 
